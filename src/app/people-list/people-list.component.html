@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Twitter</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of people">
+            <td>{{ p.name }}</td>
+            <td>{{ p.surname }}</td>
+            <td><a href="https://twitter.com/{{ p.twitter }}" target="_blank">{{ p.twitter }}</a></td>
+            <td><button class="btn btn-sm btn-default" (click)="editPerson.emit(p)">Editar</button></td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-default" (click)="addPerson.emit()">Nova pessoa</button>
